@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Data</title>
+    <style>
+        body {
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            align-items: center;
+        }
+        .Display{
+            text-align: center;
+            padding: "50%";
+            align-items: center;
+            border: 5px solid rgb(34, 148, 201);
+            border-radius: 5px;
+            width: 50%;
+            background-color: rgba(188, 180, 159, 0.863);
+        }
+    </style>
+</head>
+<body>
+    <div class="Display">
+        <h1>Form Data</h1>
+        <div>
+            <p><strong>Name: </strong><span id="Name"></span></p>
+            <p><strong>Email: </strong><span id="Email"></span></p>
+            <p><strong>Phone Number: </strong><span id="Phone"></span></p>
+            <p><strong>Address to deliver the order: </strong><span id="address"></span></p>
+            <p><strong>Grocery List: </strong><span id="Grocery"></span></p>
+            <p><strong>_____________________________________________________________</strong></p>
+        </div>
+    </div>
+
+    <script>
+        const formData=JSON.parse(localStorage.getItem("formData"));
+
+        // Display
+        document.getElementById("Name").textContent=formData.username;
+        document.getElementById("Email").textContent=formData.email;
+        document.getElementById("Phone").textContent=formData.phone;
+        document.getElementById("address").textContent=formData.Address;
+        document.getElementById("Grocery").textContent=formData.grocery;
+    </script>
+</body>
+</html>
